@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
     reconstruct_full_params["generate_pc_pnts"] = true; // 生成pnts格式的点云tile
     reconstruct_full_params["generate_geotiff"] = true; // 生成geotiff格式的2D产品(DOM+DSM)
     reconstruct_full_params["generate_tile_2D"] = true; // 2D产品切片
+    reconstruct_full_params["input_image_type"] = 1; //1代表RGB影像
 
     // 影像组1(相机1拍摄)
     std::vector<std::string> file_group1 = {
@@ -51,7 +52,6 @@ int main(int argc, char* argv[])
         }
     }
     reconstruct_full_params["image_meta_data"] = image_meta_data;
-    reconstruct_full_params["input_image_type"] = 1;
     mipmap::ReconstructFull(reconstruct_full_params.dump(), cb);
     return 0;
 }
