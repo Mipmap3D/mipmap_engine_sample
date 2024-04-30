@@ -3,7 +3,6 @@ set(MipMap_INCLUDE_DIR ${MipMapSDK_PATH}/include)
 message("mipmap include dir: " ${MipMap_INCLUDE_DIR})
 if (${platform} STREQUAL "windows")
   set(MipMap_LIBRARIES 
-    ${MipMapSDK_PATH}/lib/gflags_nothreads_static.lib 
     ${MipMapSDK_PATH}/lib/mipmap_engine.lib
     shlwapi.lib)
 elseif (${platform} STREQUAL "ubuntu")
